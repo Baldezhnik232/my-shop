@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Screen } from "../app/ui/screen";
+import MainPage from './main/page'
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -23,12 +24,12 @@ export default function Home() {
   }, []);
 
   return (
-    // Весь экран изначально имеет нужный вам цвет
-    <div className="relative flex h-screen w-full items-center justify-center bg-zinc-50  font-sans">
+
+    <div className="relative flex  h-screen w-full justify-center bg-zinc-50  font-sans">
       <AnimatePresence>
         {showContent && (
           <motion.div
-            className="flex h-full w-full items-center justify-center bg-[#D8DDFF] font-sans"
+            className="flex h-full  w-full items-center justify-center bg-[#D8DDFF] font-sans"
             key="screen-wrapper"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -45,7 +46,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           className="text-zinc-800"
         >
-          <main>Welcome to the App</main>
+          <MainPage/>
         </motion.div>
       )}
     </div>
